@@ -1,6 +1,6 @@
 # Web-Notion-Project (HTML, Python, MongoDB) 
 
-> 본인이 수강한 코딩 강의 리뷰를 웹에 등록할 수 있는 노션 만들기 프로젝트입니다. 
+> 본인이 들어본 유튜브 코딩 강의 리뷰를 웹에 등록할 수 있는 노션 만들기 프로젝트입니다. 
 
 
 > http://woohyunkim.shop/coding#
