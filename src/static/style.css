@@ -1,0 +1,177 @@
+ * {
+          font-family: 'Sunflower', sans-serif;}
+
+        .review-box-title{
+            padding:12px 12px 12px 12px;
+            font-size: 25px;
+            color:white
+        }
+        .review-box-content{
+            padding:12px 12px 12px 8px;
+        }
+        .backgrond{
+            background-color: #FFA247;
+            margin: auto;
+            width: 1100px;
+            height:100vh;
+            display: table;
+        }
+
+        .jumbotron {
+            padding: 30px 32px 32px 32px;
+            background-color: #fffcf7;
+            margin: 15px 300px 15px 300px;
+            width: 500px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .review-box {
+            width: 900px;
+            margin: auto;
+            background-color: rgba(249, 101, 21, 0.8);
+            border-radius: 15px;
+            color: #fffcf7;
+        }
+
+        /*마이코딩리뷰 호랑이 아이콘 & 타이틀*/
+        .myitem {
+            margin: auto;
+            display: inline-block;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .myitem img {
+            width: 400px;
+            height: 400px;
+            margin: auto;
+            position: relative;
+        }
+
+        .myitem p {
+            position: relative;
+            top: -30px;
+        }
+
+
+        /* 리뷰 작성 버튼*/
+        .myButton {
+            box-shadow: inset 0px 1px 0px 0px #e07416;
+            background: linear-gradient(to bottom, #f58b0a 5%, #eb870e 100%);
+            background-color: #f58b0a;
+            border-radius: 6px;
+            border: 1px solid #eeb44f;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 6px 18px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #cc9f52;
+            margin: 0 auto;
+        }
+
+        .myButton:hover {
+            text-decoration: none;
+            background: linear-gradient(to bottom, #eb870e 5%, #f58b0a 100%);
+            background-color: #eb870e;
+        }
+
+        .myButton:active {
+            position: relative;
+            top: 1px;
+        }
+
+        .site-connect {
+            background-color: rgba(249, 101, 21, 0.8);
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            box-shadow: inset 0px 1px 0px 0px #e07416;
+            border-radius: 6px;
+            border: 1px solid #eeb44f;
+        }
+
+        .btn-save {
+            background-color: saddlebrown;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            box-shadow: inset 0px 1px 0px 0px #e07416;
+            border-radius: 6px;
+            border: 1px solid #eeb44f;
+        }
+
+        /*네비게이션*/
+        .nav-menu li {
+            list-style-type: none;
+            float: left;
+            margin-left: 35px;
+            color: #fffcf7;
+            font-size: 20px;
+        }
+        .nav-menu li a{
+            text-decoration-line: none;
+            color: #fffcf7;
+        }
+
+        /*카드*/
+        .card {
+            width: 300px;
+            height: 400px;
+            margin-top: 15px;
+            float: left;
+            left: 9%;
+        }
+
+        .card-text {
+            padding: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 300px;
+            height: 50px;
+        }
+
+        .card-footer::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .card-footer::-webkit-scrollbar-thumb {
+            background-color: #2f3542;
+            border-radius: 10px;
+            background-clip: padding-box;
+            border: 2px solid transparent;
+        }
+
+        .card-footer::-webkit-scrollbar-track {
+            background-color: grey;
+            border-radius: 10px;
+            box-shadow: inset 0px 0px 5px white;
+        }
+        .card-footer {
+            display: inline-block;
+            width: 300px;
+            height: 80px;
+            overflow-y: scroll;
+        }
+
+        .card-img {
+            width: 200px;
+            height: 200px;
+            margin: auto;
+        }
+        .card-body {
+            padding: 5px;
+        }
+        .subtitle {
+            margin-top:13px;
+            margin-left: 100px;
+            color:#fffcf7;
+            font-weight: bold;
+            font-size: 50px;
+        }
+
+

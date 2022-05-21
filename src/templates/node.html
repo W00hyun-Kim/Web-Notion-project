@@ -1,0 +1,222 @@
+<!Doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+     <!-- 구글폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@300&family=Sunflower:wght@300&display=swap"
+          rel="stylesheet">
+
+    <title>마이코딩리뷰</title>
+
+    <!-- style -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}"/>
+
+    <script>
+        $(document).ready(function () {
+            $('#card-box').empty();
+            readReview();
+        });
+
+        function GetReview() {
+            let title = $('#title').val()
+            let url = $('#url').val()
+            let review = $('#review').val()
+            let lecture = $('#lecture').val()
+
+            $.ajax({
+                type: "POST",
+                url: "/review",
+                data: {title_give: title, url_give: url, review_give: review, lecture_give: lecture},
+                success: function (response) {
+                    alert(response["msg"]);
+                    window.location.reload();
+
+                }
+            })
+        }
+
+        function readReview() {
+
+            $.ajax({
+                type: "GET",
+                url: "/node_review",
+                data: {},
+                success: function (response) {
+                    let reviews = response['node_reviews']
+                    for (let i = 0; i < reviews.length; i++) {
+                        let title = reviews[i]['title']
+                        let url = reviews[i]['url']
+                        let review = reviews[i]['review']
+                        let lecture = reviews[i]['lecture']
+
+
+                        let temp_html = `<div class="card">
+                                            <img class="card-img"
+                                                 src="../static/${lecture}.png"
+                                                 alt="Card image cap">
+                                            <div class="card-body">
+                                                <h5 class="card-title"></h5>
+                                                <p class="card-text">${title}</p>
+                                            </div>
+                                            <div class="card-footer">
+                                                <small class="text-muted">${review}</small>
+                                            </div>
+                                            <a class="btn btn-primary site-connect" href="${url}" role="button">리뷰한 사이트 바로가기</a>
+                                        </div>`
+                        $('#card-box').prepend(temp_html)
+                    }
+                }
+            })
+        }
+
+        const paras = document.querySelectorAll("p");
+
+        for (let para of paras) {
+            para.scroll(0, 100);
+        }
+
+    </script>
+
+</head>
+<body>
+<!--네비-->
+    <div class="backgrond">
+        <div class="pos-f-t">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-3">
+                    <ul class="nav-menu">
+                        <li>
+                            <a href="/html_css">HTML/CSS</a>
+                        </li>
+                        <li>
+                            <a href="/js">JavaScript</a>
+                        </li>
+                        <li>
+                            <a href="/java">Java</a>
+                        </li>
+                        <li>
+                            <a href="/react_vue">React/Vue.js</a>
+                        </li>
+                        <li>
+                            <a href="/node">Node.js</a>
+                        </li>
+                        <li>
+                            <a href="/jquery">jQuery</a>
+                        </li>
+                        <li>
+                            <a href="/spring">Spring</a>
+                        </li>
+                        <li>
+                            <a href="/python">Python</a>
+                        </li>
+                        <li>
+                            <a href="/c_c">C/C++</a>
+                        </li>
+                        <li>
+                            <a href="/etc">기타</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="navbar navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        </div>
+    <!--점보트론-->
+    <div class="jumbotron">
+        <div class="myitem">
+            <img src="../static/title-image.png">
+
+        </div>
+        <!--   리뷰작성 버튼   -->
+        <div>
+            <button type="button" class="myButton" onClick="location.href='/coding'">리뷰 작성 하러 가기!</button>
+        </div>
+    </div>
+
+    <!--   리뷰 포스트   -->
+    <div class="review-box">
+        <div id="review-write" class="form-post" style="display:none" class="card text-center">
+            <div class="review-box-title"> 코딩강의 리뷰 작성하기!</div>
+            <div class="card-body">
+                <h5 class="review-box-content">다른 사람을 위해 리뷰를 작성해주세요</h5>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">리뷰 제목</span>
+                    </div>
+                    <input type="text" class="form-control" id="title">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">사이트 URL</span>
+                    </div>
+                    <input type="text" class="form-control" id="url">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text">강의 분류</label>
+                    </div>
+                    <select class="custom-select" id="lecture">
+                        <option selected>-- 분류를 선택하세요 --</option>
+                        <option value="HTML,CSS">HTML/CSS</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="JAVA">Java</option>
+                        <option value="vue_react">React/Vue.js</option>
+                        <option value="Node.js">Node.js</option>
+                        <option value="jquery">jQuery</option>
+                        <option value="spring">Spring</option>
+                        <option value="python">Python</option>
+                        <option value="C,C++">C/C++</option>
+                        <option value="etc">기타</option>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">리뷰 내용</span>
+                    </div>
+                    <textarea class="form-control" id="review"
+                              cols="30"
+                              rows="5" placeholder="140자까지 입력할 수 있습니다."></textarea>
+                </div>
+                <p><a href="#" class="btn btn-primary btn-save" onclick="GetReview()">저장하기</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!--리뷰 카드 덱-->
+        <h2 class="subtitle">Node.js</h2>
+        <!--추가되는 카드-->
+        <div id="card-box">
+        </div>
+    </div>
+</body>
+</html>

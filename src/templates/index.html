@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <title>Woohyun Kim</title>
+
+    <meta property="og:title" content="Woohyun Kim"/>
+    <meta property="og:description" content="Projects"/>
+    <meta property="og:image" content="{{ url_for('static', filename='woohyunkim.png') }}"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Fuzzy+Bubbles:wght@400;700&family=Gowun+Batang&family=Gowun+Dodum&family=Sunflower:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+        font-family: 'Architects Daughter', cursive;
+        font-family: 'Fuzzy Bubbles', cursive;
+        font-family: 'Gowun Batang', serif;
+        font-family: 'Gowun Dodum', sans-serif;
+        font-family: 'Sunflower', sans-serif;
+        }
+        .card {
+            margin: 20px;
+            display: block;
+            width: 900px;
+            text-align: center;
+            left: 50%;
+            margin-left: -200px;
+
+        }
+
+        .wrap {
+            margin: auto;
+            display: block;
+            width: 500px;
+            position: center;
+            text-align: center;
+        }
+
+        .item_img {
+            margin: auto;
+            display: block;
+            width: 300px;
+            height: 300px;
+            background-image: url('/static/김우현.jfif');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            border-radius: 150px;
+        }
+        .card-img-top {
+            background-image: url('/static/woohyunkim.png');
+
+        }
+
+
+
+    </style>
+
+    <script>
+        function functionA() {
+            location.href="/shopping"
+        }
+
+        function functionB() {
+            location.href="/coding"
+        }
+
+        function functionC() {
+            location.href="/moviestar"
+        }
+
+        function functionD() {
+            location.href="/bookreview"
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+        <div class="wrap">
+            <div class="item_desc">
+                <div class="item_img"> </div>
+                <h1>PROJECTS</h1>
+                <p>2021.12~</p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 25rem;">
+            <img alt="Card image cap" class="card-img-top img-fluid" src="/static/ogimage.png" />
+            <div class="card-body">
+                <h5 class="card-title">One page Shoppingmall</h5>
+                <p class="card-text"> 원페이지 쇼핑몰</p>
+                <a href="/shopping"  onclick="functionA()" class="btn btn-primary">Visit Website</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 25rem;">
+            <img alt="Card image cap" class="card-img-top img-fluid" src="/static/호랑이.JPG"/>
+            <div class="card-body">
+                <h5 class="card-title">My coding review</h5>
+                <p class="card-text">내가 들은 코딩 강의를 리뷰하고 url메모하기</p>
+                <a href="/coding" onclick="functionB()" class="btn btn-primary">Visit Website</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 25rem;">
+            <img alt="Card image cap" class="card-img-top img-fluid" src="/static/무비스타.png"/>
+            <div class="card-body">
+                <h5 class="card-title">Movie star</h5>
+                <p class="card-text">내가 좋아하는 영화배우 순위 정하기</p>
+                <a href="/moviestar" onclick="functionC()" class="btn btn-primary">Visit Website</a>
+            </div>
+        </div>
+<!--        <div class="card" style="width: 25rem;">-->
+<!--            <img alt="Card image cap" class="card-img-top img-fluid" src="/static/woohyunkim.png"/>-->
+<!--            <div class="card-body">-->
+<!--                <h5 class="card-title">Book review</h5>-->
+<!--                <p class="card-text">Review what you read.</p>-->
+<!--                <a href="/bookreview" onclick="functionD()" class="btn btn-primary">Visit Website</a>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+
+</body>
+
+</html>
